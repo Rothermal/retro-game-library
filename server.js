@@ -5,7 +5,7 @@ import morgan from 'morgan';
 
 // import models and routes
 import Game from './app/models/game';
-import{getGames,GetGame,postGame,deleteGame} from './app/routes/game';
+import{getGames,getGame,postGame,deleteGame} from './app/routes/game';
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -34,21 +34,21 @@ app.use(express.static(__dirname + '/client/dist'));
 app.use((req,res,next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "GET,POST,DELETE");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accpet");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type,Accept");
     next();
 });
 
 // routes
-//app.route('/games')
-//    // create a game
-//    .post(postGame)
-//    // get all the games
-//    .get(getGames);
-//app.route('/games/:id')
-//    // get a single game
-//    .get(getGame)
-//    // delete a single game
-//    .delete(deleteGame);
+app.route('/games')
+    // create a game
+    .post(postGame)
+    // get all the games
+    .get(getGames);
+app.route('/games/:id')
+    // get a single game
+    .get(getGame)
+    // delete a single game
+    .delete(deleteGame);
 
 // catch all route. go back to homepage.
 
