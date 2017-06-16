@@ -8,7 +8,7 @@ import Game from './app/models/game';
 import{getGames,getGame,postGame,deleteGame} from './app/routes/game';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 // db connection through mongoose
 const options = {
