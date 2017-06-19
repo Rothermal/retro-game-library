@@ -8,11 +8,13 @@
   "scripts": {
     "api": "babel-node server.js"
   },
-  "start":"NODE_ENV=development webpack-dev-server",
-  "build":"NODE_ENV-build webpack",
+  "start": "NODE_ENV=development webpack-dev-server",
+  "build": "NODE_ENV-build webpack",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.15.3",
+    "jquery": "^3.2.1",
     "mongoose": "^4.10.5",
     "morgan": "^1.8.2"
   },
