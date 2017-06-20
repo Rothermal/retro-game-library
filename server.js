@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import morgan from 'morgan';
+var dotenv = require('dotenv').config();
 
 // import models and routes
 import Game from './app/models/game';
