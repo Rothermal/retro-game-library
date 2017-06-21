@@ -1,13 +1,19 @@
 /**
  * Created by Mark on 6/20/17.
  */
-import '../dist/css/style.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './routes';
-var apiKey = process.env.apikey;
+import {Router, Route, hashHistory,IndexRoute} from 'react-router';
+import {Home, Welcome, About, Contact} from './components';
 
+// use hash history for easier deployment
+const routes = (
+  <Router history={hashHistory}>
+      <Route path="/" component={Home}>
+          <IndexRoute component={Welcome}/>
+          <Route path="/about" component={About}/>
+          <Route path="/contact" component={Contact}/>
+      </Route>
+  </Router>
+);
 
-// dont forget to add api key
-filepicker.setKey(apiKey);
-
+export default routes;
