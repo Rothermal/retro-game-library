@@ -6,10 +6,11 @@
   "author": "Mark Rothermal",
   "license": "MIT",
   "scripts": {
-    "api": "babel-node server.js"
+    "api": "babel-node server.js",
+    "start": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV-build webpack"
   },
-  "start": "NODE_ENV=development webpack-dev-server",
-  "build": "NODE_ENV-build webpack",
+
   "dependencies": {
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
