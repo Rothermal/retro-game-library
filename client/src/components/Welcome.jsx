@@ -8,7 +8,7 @@ export default class Welcome extends PureComponent {
               <h1 className="cover-heading">Welcome</h1>
               <p className="lead">Click on browse to start your journey into the wiki of games that made history</p>
               <p className="lead">
-                  <link className="btn btn-lg" to="/games">Browse!</link>
+                  <Link className="btn btn-lg" to="/games">Browse!</Link>
               </p>
           </div>
         );
