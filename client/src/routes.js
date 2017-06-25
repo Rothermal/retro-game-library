@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {Router, Route, hashHistory,IndexRoute} from 'react-router';
+import {AddGameContainer, GamesContainer } from './containers';
 import {Home, Welcome, About, Contact} from './components';
 
 // use hash history for easier deployment
@@ -12,6 +13,10 @@ const routes = (
           <IndexRoute component={Welcome}/>
           <Route path="/about" component={About}/>
           <Route path="/contact" component={Contact}/>
+      </Route>
+      <Route path="/games" component={Archive}>
+          <IndexRoute component={AddGameContainer} />
+          <Route path="add" component={GamesContainer}/>
       </Route>
   </Router>
 );
