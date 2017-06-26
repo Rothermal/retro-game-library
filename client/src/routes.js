@@ -4,7 +4,7 @@
 import React from 'react';
 import {Router, Route, hashHistory,IndexRoute} from 'react-router';
 import {AddGameContainer, GamesContainer } from './containers';
-import {Home, Welcome, About, Contact} from './components';
+import {Home, Welcome, About, Contact, Archive} from './components';
 
 // use hash history for easier deployment
 const routes = (

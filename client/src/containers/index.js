@@ -6,4 +6,4 @@ import GamesContainer from './GamesContainer';
 
 // export the containers
 
-export {AddGameContainer,GamesContainer};
+export { AddGameContainer, GamesContainer };

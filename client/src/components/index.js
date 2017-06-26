@@ -1,8 +1,9 @@
 import About from './About';
-import Contact from './contact';
-import Home from './home';
-import Welcome from './welcome';
+import Contact from './Contact';
+import Home from './Home';
+import Welcome from './Welcome';
+import Archive from './Archive';
 
 // we export all the components at once
 
-export {About, Contact, Home, Welcome};
+export {About, Contact, Home, Welcome, Archive};
