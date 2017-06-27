@@ -24,28 +24,47 @@ export default class GamesContainer extends Component {
     }
 
     getGames(){
-
+        fetch('http://localhost:8080/games', {
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+            .then(response => response.json()) // The json response to object literal
+            .then(data => this.setState({ games: data }));
     }
 
     deleteGame(id){
-
+        fetch(`http://localhost:8080/games/${id}`, {
+            headers: new Headers({
+                'Content-Type': 'application/json',
+            }),
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(response => {
+                // The game is also removed from the state thanks to the filter function
+                this.setState({ games: this.state.games.filter(game => game._id !== id) });
+                console.log(response.message);
+            });
     }
     setSearchBar (event){
-
+        // Super still filters super mario thanks to toLowerCase
+        this.setState({ searchBar: event.target.value.toLowerCase() });
     }
-    render(){
-        const {games,selectedGame,searchBar} = this.state;
-        return(
-          <div>
-              <Modal game={selectedGame}/>
-              <GamesListManager
-                  games={games}
-                  searchBar={searchBar}
-                  setSearchBar={this.setSearchBar}
-                  toggleModal={this.toggleModal}
-                  deleteGame={this.deleteGame}
-                  />
-          </div>
+
+    render () {
+        const { games, selectedGame, searchBar } = this.state;
+        return (
+            <div>
+                <Modal game={selectedGame} />
+                <GamesListManager
+                    games={games}
+                    searchBar={searchBar}
+                    setSearchBar={this.setSearchBar}
+                    toggleModal={this.toggleModal}
+                    deleteGame={this.deleteGame}
+                />
+            </div>
         );
     }
 }
